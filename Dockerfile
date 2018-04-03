@@ -15,7 +15,7 @@ RUN apt-get install -y wget curl htop
 
 RUN apt-get install -y libpq-dev \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install pdo_pgsql pgsql
+    && docker-php-ext-install pdo_pgsql pgsql mysqli pdo_mysql
 
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.15.0/confd-0.15.0-linux-amd64
 RUN mkdir -p /opt/confd/bin
